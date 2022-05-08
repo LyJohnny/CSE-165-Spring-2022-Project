@@ -11,12 +11,14 @@ CONFIG += c++11
 SOURCES += \
     components.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    spaceinvaders.cpp
 
 HEADERS += \
     components.h \
     mainwindow.h \
-    settings.h
+    settings.h \
+    spaceinvaders.h
 
 FORMS += \
     mainwindow.ui

@@ -53,7 +53,7 @@ private:
 
 ///////////////////////////////////////////////////////
 
-class CBullet : public QObject, public QGraphicsItem{
+class CBullet : public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     CBullet(EColor eColor, QGraphicsItem* pParent = nullptr);
@@ -82,8 +82,8 @@ class CPoints : public QGraphicsTextItem{
 public:
     CPoints(QGraphicsItem *pParent = nullptr);
 
-    void IncreasedScore();
-    void DecreasedScore();
+    void IncreaseScore();
+    void DecreaseScore();
     void DecreaseHealth();
 
     int GetHealth() const;
