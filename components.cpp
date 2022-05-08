@@ -30,28 +30,28 @@ void CCannon::SetColor(EColor eColor)
     switch (eColor){
     case EColor::Red:{
         QPixmap oPixmap(":/Resources/RedCannon.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), QT::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor::Pink:{
         QPixmap oPixmap(":/Resources/PinkCannon.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), QT::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor:: Blue:{
         QPixmap oPixmap(":/Resources/BlueCannon.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), QT::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     default:{
         QPixmap oPixmap(":/Resources/RedCannon.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), QT::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     }
 }
 
-CAlien::CAlien(EColor eColor, QGraphicsItem *pParent): QGraphicsPixMapItem(pParent)
+CAlien::CAlien(EColor eColor, QGraphicsItem *pParent): QGraphicsPixmapItem(pParent)
 {
     SetColor(eColor);
     QTimer* pTimer = new QTimer(this);
@@ -71,17 +71,17 @@ void CAlien::SetColor(EColor eColor)
 
     case EColor::Red:{
         QPixmap oPixmap(":/Resources/RedAlien.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), QT::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor::Pink:{
         QPixmap oPixmap(":/Resources/PinkAlien.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), QT::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor:: Blue:{
         QPixmap oPixmap(":/Resources/BlueAlien.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), QT::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     }
@@ -97,12 +97,37 @@ void CAlien::onMove()
         delete this;
     }
 
-    QList<QGraphicsItem*> 1stCollidingItem = collidingItems();
+    QList<QGraphicsItem*> lstCollidingItem = collidingItems();
 
-    for(auto const pItem : 1stCollidingItem){
+    for(auto const pItem : lstCollidingItem){
         if(dynamic_cast<CCannon*>(pItem))
             emit sigGameOver();
         // comment
     }
 }
 
+
+CBullet::CBullet(EColor eColor, QGraphicsItem *pParent)
+{
+
+}
+
+EColor CBullet::GetColor() const
+{
+
+}
+
+void CBullet::SetColor(EColor eColor)
+{
+
+}
+
+void CBullet::onMove()
+{
+
+}
+
+CPoints::CPoints(QGraphicsItem *pParent)
+{
+
+}
