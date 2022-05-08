@@ -1,7 +1,7 @@
 #ifndef COMPONENTS_H
 #define COMPONENTS_H
 
-#include "setting.h"
+#include "settings.h"
 #include <QGraphicsPixmapItem>
 #include <QGraphicsSimpleTextItem>
 #include <QGraphicsItem>
@@ -23,8 +23,8 @@ public:
     void SetColor(EColor eColor);
 
 signals:
-    void sigIncreasedScore();
-    void sigDecreasedScore();
+    void sigIncreaseScore();
+    void sigDecreaseScore();
 
 private:
     EColor m_eColor;
@@ -62,8 +62,9 @@ public:
     void SetColor(EColor eColor);
 
 signals:
-    void sigDecreaseHealth();
-    void sigGameOver();
+    void sigIncreaseScore();
+    void sigDecreaseScore();
+
 
 public slots:
     void onMove();
@@ -98,3 +99,4 @@ private:
 
 
 #endif // COMPONENTS_H
+
