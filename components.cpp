@@ -91,7 +91,7 @@ void CAlien::onMove()
 {
     setPos(x(), y()+5);
 
-    if(pos().y() >= (scene()->height() - gCannonSize.height())) {
+    if (pos().y() >= (scene()->height() - gCannonSize.height())) {
         scene()-> removeItem(this);
         emit sigDecreaseHealth();
         delete this;
