@@ -14,5 +14,15 @@
         <file>Resources/RedBullet.png</file>
         <file>Resources/RedCannon.png</file>
         <file>Resources/SpaceInvadersBg.jpg</file>
+        <file>Resources/Ammon_HepworthBlue.png</file>
+        <file>Resources/Ammon_HepworthRed.png</file>
+        <file>Resources/SpaceInvadersRed.png</file>
+        <file>Resources/Ammon_HepworthPink.png</file>
+        <file>Resources/ScaredStudentPink.png</file>
+        <file>Resources/SpaceInvadersRed.png</file>
+        <file>Resources/textBeamDeepBreathPink.png</file>
+        <file>Resources/textBeamWakeUpBlue.png</file>
+        <file>Resources/textBeamPolymorphismRed.png</file>
+        <file>Resources/AsleepStudent.png</file>
     </qresource>
 </RCC>

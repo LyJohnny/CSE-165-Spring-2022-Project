@@ -29,22 +29,22 @@ void CCannon::SetColor(EColor eColor)
     m_eColor = eColor;
     switch (eColor){
     case EColor::Red:{
-        QPixmap oPixmap(":/Resources/RedCannon.png"); // Change it with Stewart's drawing
+        QPixmap oPixmap(":/Resources/Ammon_HepworthRed.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor::Pink:{
-        QPixmap oPixmap(":/Resources/PinkCannon.png"); // Change it with Stewart's drawing
+        QPixmap oPixmap(":/Resources/Ammon_HepworthPink.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor:: Blue:{
-        QPixmap oPixmap(":/Resources/BlueCannon.png"); // Change it with Stewart's drawing
+        QPixmap oPixmap(":/Resources/Ammon_HepworthBlue.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     default:{
-        QPixmap oPixmap(":/Resources/RedCannon.png"); // Change it with Stewart's drawing
+        QPixmap oPixmap(":/Resources/Ammon_HepworthRed.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         m_eColor = EColor::Red;
 
@@ -71,17 +71,17 @@ void CAlien::SetColor(EColor eColor)
     switch(eColor){
 
     case EColor::Red:{
-        QPixmap oPixmap(":/Resources/RedAlien.png"); // Change it with Stewart's drawing
+        QPixmap oPixmap(":/Resources/SpaceInvadersRed.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor::Pink:{
-        QPixmap oPixmap(":/Resources/PinkAlien.png"); // Change it with Stewart's drawing
+        QPixmap oPixmap(":/Resources/ScaredStudentPink.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
     case EColor:: Blue:{
-        QPixmap oPixmap(":/Resources/BlueAlien.png"); // Change it with Stewart's drawing
+        QPixmap oPixmap(":/Resources/AsleepStudent.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
         break;
     }
@@ -128,18 +128,18 @@ void CBullet::SetColor(EColor eColor)
 
     switch (eColor){
         case EColor::Red:{
-            QPixmap oPixmap(":/Resources/RedBullet.png");
-            setPixmap(oPixmap.scaled(QSize(40, 40), Qt::KeepAspectRatio));
+            QPixmap oPixmap(":/Resources/textBeamPolymorphismRed.png");
+            setPixmap(oPixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio));
             break;
         }
         case EColor::Pink:{
-            QPixmap oPixmap(":/Resources/PinkBullet.png");
-            setPixmap(oPixmap.scaled(QSize(40, 40), Qt::KeepAspectRatio));
+            QPixmap oPixmap(":/Resources/textBeamDeepBreathPink.png");
+            setPixmap(oPixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio));
             break;
         }
         case EColor::Blue:{
-            QPixmap oPixmap(":/Resources/BlueBullet.png");
-            setPixmap(oPixmap.scaled(QSize(40, 40), Qt::KeepAspectRatio));
+            QPixmap oPixmap(":/Resources/textBeamWakeUpBlue.png");
+            setPixmap(oPixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio));
             break;
         }
     }

@@ -77,8 +77,8 @@ void CSpaceInvaders::keyPressEvent(QKeyEvent *pEvent)
 
 void CSpaceInvaders::onCreateEnemy()
 {
-    int nPos = 100 + (arc4random() % m_oScreenSize.width()-100);
-    int nColor = arc4random() % 3;
+    int nPos = 200 + (rand() % m_oScreenSize.width()-240);
+    int nColor = rand() % 3;
 
     CAlien * pAlien = new CAlien(static_cast<EColor>(nColor));
     pAlien->setPos(nPos,0);
