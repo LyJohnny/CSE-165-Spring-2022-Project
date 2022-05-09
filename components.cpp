@@ -23,7 +23,7 @@ EColor CCannon::GetColor() const
     return m_eColor;
 }
 
-// Setting the color of the Cannon
+// Setting the color of the Hepworth
 void CCannon::SetColor(EColor eColor)
 {
     m_eColor = eColor;
@@ -72,17 +72,17 @@ void CAlien::SetColor(EColor eColor)
 
     case EColor::Red:{
         QPixmap oPixmap(":/Resources/SpaceInvadersRed.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(120,120), Qt::KeepAspectRatio));
         break;
     }
     case EColor::Pink:{
         QPixmap oPixmap(":/Resources/ScaredStudentPink.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(120,120), Qt::KeepAspectRatio));
         break;
     }
     case EColor:: Blue:{
         QPixmap oPixmap(":/Resources/AsleepStudent.png"); // Change it with Stewart's drawing
-        setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
+        setPixmap(oPixmap.scaled(QSize(120,120), Qt::KeepAspectRatio));
         break;
     }
     }

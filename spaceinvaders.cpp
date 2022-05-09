@@ -71,6 +71,9 @@ void CSpaceInvaders::keyPressEvent(QKeyEvent *pEvent)
     case Qt::Key_Space:
         m_pCannon->Shoot();
         break;
+    case Qt::Key_Escape: // To Close the game
+        close();
+        break;
 
     }
 }
@@ -110,5 +113,23 @@ void CSpaceInvaders::onDecreaseHealth()
 
 void CSpaceInvaders::onGameOver()
 {
-        close();
+
+    // Keeps creating aliens after game over need to fix
+    QGraphicsScene* pScene = new QGraphicsScene();
+    setScene(pScene);
+    pScene->setSceneRect(0,0, m_oScreenSize.width(), m_oScreenSize.height());
+
+    setBackgroundBrush(QBrush(QImage(":/Resources/gameOver.png"))); //fix this?
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setCursor(Qt::PointingHandCursor);
+    setStyleSheet("border-style:none");
+    scene()->clear();
+
+    QTimer* pTimer = new QTimer(this);
+    connect(pTimer, &QTimer::timeout, this, &CSpaceInvaders::onCreateEnemy);
+    pTimer->stop();
+
+    scene()->clear();
+
 }
