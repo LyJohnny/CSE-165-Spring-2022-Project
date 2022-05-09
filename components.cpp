@@ -46,7 +46,8 @@ void CCannon::SetColor(EColor eColor)
     default:{
         QPixmap oPixmap(":/Resources/RedCannon.png"); // Change it with Stewart's drawing
         setPixmap(oPixmap.scaled(QSize(100,100), Qt::KeepAspectRatio));
-        break;
+        m_eColor = EColor::Red;
+
     }
     }
 }
@@ -170,7 +171,7 @@ void CBullet::onMove()
     }
     setPos(x(), y() - 10);
 
-    if (pos().y() < 10){
+    if (pos().y() < 0){
         scene()->removeItem(this);
         delete this;
     }
@@ -197,18 +198,18 @@ void CPoints::DecreaseScore()
 
 void CPoints::DecreaseHealth()
 {
-    m_nScore --;
+    m_nHealth--;
     setPlainText(QString("Health : ") + QString::number(m_nHealth) + "\n" + QString("Score : ") + QString::number(m_nScore));
 }
 
 int CPoints::GetHealth() const
 {
-
+    return m_nHealth;
 }
 
 int CPoints::GetScore() const
 {
-
+    return m_nScore;
 }
 
 void CPoints::Reset()
