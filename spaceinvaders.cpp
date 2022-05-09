@@ -55,12 +55,12 @@ void CSpaceInvaders::keyPressEvent(QKeyEvent *pEvent)
     switch (pEvent->key()){
     case Qt::Key_Left:
         if(m_pCannon->pos().x() > 0)
-            m_pCannon->setPos(m_pCannon->x() -40, m_pCannon->y());
+            m_pCannon->setPos(m_pCannon->x() -70, m_pCannon->y());
         break;
 
     case Qt::Key_Right:
         if((m_pCannon->pos().x() + gCannonSize.width()) < m_oScreenSize.width())
-            m_pCannon->setPos(m_pCannon->x() +40, m_pCannon->y());
+            m_pCannon->setPos(m_pCannon->x() +70, m_pCannon->y());
         break;
 
     case Qt::Key_Z:{

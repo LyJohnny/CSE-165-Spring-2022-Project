@@ -90,7 +90,7 @@ void CAlien::SetColor(EColor eColor)
 
 void CAlien::onMove()
 {
-    setPos(x(), y()+5);
+    setPos(x(), y()+3);
 
     if (pos().y() >= (scene()->height() - gCannonSize.height())) {
         scene()-> removeItem(this);
@@ -129,17 +129,17 @@ void CBullet::SetColor(EColor eColor)
     switch (eColor){
         case EColor::Red:{
             QPixmap oPixmap(":/Resources/textBeamPolymorphismRed.png");
-            setPixmap(oPixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio));
+            setPixmap(oPixmap.scaled(QSize(160, 160), Qt::KeepAspectRatio));
             break;
         }
         case EColor::Pink:{
             QPixmap oPixmap(":/Resources/textBeamDeepBreathPink.png");
-            setPixmap(oPixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio));
+            setPixmap(oPixmap.scaled(QSize(160, 160), Qt::KeepAspectRatio));
             break;
         }
         case EColor::Blue:{
             QPixmap oPixmap(":/Resources/textBeamWakeUpBlue.png");
-            setPixmap(oPixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio));
+            setPixmap(oPixmap.scaled(QSize(160, 160), Qt::KeepAspectRatio));
             break;
         }
     }
@@ -169,7 +169,7 @@ void CBullet::onMove()
             return;
         }
     }
-    setPos(x(), y() - 10);
+    setPos(x(), y() - 3 ); // Speed of the bullet
 
     if (pos().y() < 0){
         scene()->removeItem(this);
@@ -180,8 +180,8 @@ void CBullet::onMove()
 CPoints::CPoints(QGraphicsItem *pParent) : QGraphicsTextItem(pParent)
 {
     setPlainText(QString("Health : ") + QString::number(m_nHealth) + "\n" + QString("Score : ") + QString::number(m_nScore));
-    setDefaultTextColor(Qt::red);
-    setFont(QFont("times", 24));
+    setDefaultTextColor(Qt::white);
+    setFont(QFont("Courier", 24));
 }
 
 void CPoints::IncreaseScore()
