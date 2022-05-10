@@ -52,6 +52,7 @@ void CCannon::SetColor(EColor eColor)
     }
 }
 
+
 CAlien::CAlien(EColor eColor, QGraphicsItem *pParent): QGraphicsPixmapItem(pParent)
 {
     SetColor(eColor);
@@ -181,7 +182,7 @@ CPoints::CPoints(QGraphicsItem *pParent) : QGraphicsTextItem(pParent)
 {
     setPlainText(QString("Health : ") + QString::number(m_nHealth) + "\n" + QString("Score : ") + QString::number(m_nScore));
     setDefaultTextColor(Qt::white);
-    setFont(QFont("Courier", 24));
+    setFont(QFont("Courier", 34));
 }
 
 void CPoints::IncreaseScore()

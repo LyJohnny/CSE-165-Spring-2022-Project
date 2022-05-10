@@ -9,7 +9,7 @@ CSpaceInvaders::CSpaceInvaders(QSize oScreenSize, QWidget *pParent) : QGraphicsV
 
     pScene->setSceneRect(0,0, m_oScreenSize.width(), m_oScreenSize.height());
 
-    setBackgroundBrush(QBrush(QImage(":/Resources/SpaceInvadersBg.jpg"))); //fix this?
+    setBackgroundBrush(QBrush(QImage(":/Resources/WalmartBg.jpg"))); //Walmart Background for Hepworth :)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setCursor(Qt::PointingHandCursor);
@@ -39,6 +39,7 @@ void CSpaceInvaders::Run()
 
 }
 
+
 void CSpaceInvaders::CheckPoints()
 {
 
@@ -63,15 +64,28 @@ void CSpaceInvaders::keyPressEvent(QKeyEvent *pEvent)
             m_pCannon->setPos(m_pCannon->x() +70, m_pCannon->y());
         break;
 
+        // Keys A and D also move your player left and right
+    case Qt::Key_A:
+        if(m_pCannon->pos().x() > 0)
+            m_pCannon->setPos(m_pCannon->x() -70, m_pCannon->y());
+        break;
+
+    case Qt::Key_D:
+        if((m_pCannon->pos().x() + gCannonSize.width()) < m_oScreenSize.width())
+            m_pCannon->setPos(m_pCannon->x() +70, m_pCannon->y());
+        break;
+
+        // Changing color of player
     case Qt::Key_Z:{
         int nColor = static_cast<int>(m_pCannon->GetColor());
         m_pCannon->SetColor(static_cast<EColor>(++nColor));
         break;
     }
+        // Shoot some knowledge
     case Qt::Key_Space:
         m_pCannon->Shoot();
         break;
-    case Qt::Key_Escape: // To Close the game
+    case Qt::Key_Escape: // To Close/Exit the game
         close();
         break;
 
@@ -113,23 +127,19 @@ void CSpaceInvaders::onDecreaseHealth()
 
 void CSpaceInvaders::onGameOver()
 {
+    //Displays Game Over Screen
+    QGraphicsScene* newScene = new QGraphicsScene();
+    setScene(newScene);
+    newScene->setSceneRect(-999,-999, m_oScreenSize.width(), m_oScreenSize.height());
 
-    // Keeps creating aliens after game over need to fix
-    QGraphicsScene* pScene = new QGraphicsScene();
-    setScene(pScene);
-    pScene->setSceneRect(0,0, m_oScreenSize.width(), m_oScreenSize.height());
-
-    setBackgroundBrush(QBrush(QImage(":/Resources/gameOver.png"))); //fix this?
+    setBackgroundBrush(QBrush(QImage(":/Resources/gameOver.jpg")));
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setCursor(Qt::PointingHandCursor);
     setStyleSheet("border-style:none");
-    scene()->clear();
 
-    QTimer* pTimer = new QTimer(this);
-    connect(pTimer, &QTimer::timeout, this, &CSpaceInvaders::onCreateEnemy);
-    pTimer->stop();
 
-    scene()->clear();
+
+
 
 }
